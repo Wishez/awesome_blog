@@ -18,7 +18,7 @@ export const mutations = {
     state.fetch = false
   },
 
-  SET_ART_FILE (state) {
+  SET_ART_FAIL (state) {
     state.art = []
     state.fetch = false
   }

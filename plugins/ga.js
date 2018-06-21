@@ -24,10 +24,10 @@ export default ({ app: { router }, store }) => {
     /*
     ** 告诉 GA 增加一个 PV
     */
-   if(ga) {
+
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')
-   }
-    
+   
+
   })
 }

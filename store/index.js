@@ -59,7 +59,7 @@ export const actions = {
         list,
         pagination: res.pagination
       })
-    } else commit('article/SET_ART_FILE')
+    } else commit('article/SET_ART_FAIL')
   },
 
   // 全部文章列表 sitemap
@@ -68,7 +68,7 @@ export const actions = {
     const res = await service.getallArts()
                         .catch(err => console.error(err))
     if (res && res.code === 1) commit('sitemap/SET_ART_SUCCESS', res)
-    else commit('sitemap/SET_ART_FILE')
+    else commit('sitemap/SET_ART_FAIL')
   },
 
   // 获取最热文章列表
