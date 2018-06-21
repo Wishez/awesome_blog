@@ -2,26 +2,26 @@
     <transition-group tag="div" name="slide-down" class="article-box" :class="{'mobile': mobileLayout}">
       <div
         class="article-item"
-        v-for="item in articleList"
-        :key="item.id"
+        v-for="(item, index) in articleList"
+        :key="index"
         :class="{'mobile-article': mobileLayout}">
         <div class="content">
-          <p class="title"><nuxt-link :to="`/article/${item.id}`">{{ item.title }}</nuxt-link></p>
-          <nuxt-link :to="`/article/${item.id}`" v-if="mobileLayout">
+          <p class="title"><nuxt-link :to="`/article/${item.slug}`">{{ item.title }}</nuxt-link></p>
+          <nuxt-link :to="`/article/${item.slug}`" v-if="mobileLayout">
             <img :src="item.thumb + '?imageView2/1/w/350/h/180/watermark/2/text/amtjaGFvLmNu/font/Y2FuZGFyYQ==/fontsize/400/fill/I0ZGRkZGRg=='"
             alt=""
             width="100%"
             class="mobil-img"/>
           </nuxt-link>
-          <p class="abstrack">{{ item.descript | text(200)}}</p>
+          <p class="abstrack">{{ item.announce_text | text(200)}}</p>
           <div class="meta">
             <span class="time" v-if="!mobileLayout">
-              {{ 
+              {{
                 item.created_at | dateFormat('yyyy.MM.dd')
               }}
             </span>
             <span class="time" v-else>
-              {{ 
+              {{
                 item.created_at | dateFormat('yyyy.MM.dd')
               }}
             </span>
@@ -101,7 +101,7 @@ export default {
           width: 100%;
         }
 
-        .meta {      
+        .meta {
           color: #969696;
         }
 

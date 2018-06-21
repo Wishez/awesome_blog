@@ -1,5 +1,5 @@
 <template>
-  <section  
+  <section
     class="welcome"
     :class="{ 'mobil': mobileLayout }">
     <div class="haiyan">
@@ -33,8 +33,8 @@ export default {
     this.$nextTick(() => {
       Promise.all([
         this.$store.dispatch('getArtList', { type: 1 }),
-        this.$store.dispatch('getArtList', { type: 2 }),
-        this.$store.dispatch('getArtList', { type: 3 })
+        // this.$store.dispatch('getArtList', { type: 2 }),
+        // this.$store.dispatch('getArtList', { type: 3 })
       ])
     })
   }
@@ -49,8 +49,8 @@ export default {
   right: 0;
   width: 100%;
   height: 100%;
-  
-  background: url('https://static.jkchao.cn/main_bg.jpg') no-repeat 20% 20%;
+
+  background: url("~static/images/background.jpg") no-repeat 20% 75%;
   background-size: cover;
 
   .haiyan {

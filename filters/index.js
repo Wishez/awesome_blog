@@ -9,13 +9,13 @@
 export function dateFormat (times, format) {
   let time = Date.parse(times)
   const between = (Date.now() - Number(time)) / 1000
-  if (between < 3600 && ((between / 60) < 1)) {
-    return '刚刚'
-  } else if (between < 3600) {
-    return pluralize(~~(between / 60), '分钟')
-  } else if (between < 86400) {
-    return pluralize(~~(between / 3600), '小时')
-  }
+  // if (between < 3600 && ((between / 60) < 1)) {
+  //   return '刚刚'
+  // } else if (between < 3600) {
+  //   return pluralize(~~(between / 60), '分钟')
+  // } else if (between < 86400) {
+  //   return pluralize(~~(between / 3600), '小时')
+  // }
   if (!time) return null
   var date = new Date(time)
   var o = {

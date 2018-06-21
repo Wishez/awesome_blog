@@ -51,13 +51,17 @@ export const actions = {
     commit('article/FETCH_ART')
     const res = await service.getArts(data)
                       .catch(err => console.error(err))
-    if (res && res.code === 1) {
-      let list
-      if (res.pagination.current_page === 1) list = res.list
-      else list = [...state.article.art.list, ...res.list]
+
+    if (res) {
+      console.log(state.article.art.list);
+      let list = [...res];
+      // if (res.pagination.current_page === 1) list = res.list
+      // else list = [...state.article.art.list, ...res.list]
       commit('article/SET_ART_SUCCESS', {
         list,
-        pagination: res.pagination
+        pagination: {
+          current_page: 1
+        }
       })
     } else commit('article/SET_ART_FAIL')
   },
